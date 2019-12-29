@@ -9,6 +9,6 @@ has the option to search up the weather in other cities.
 
 Here are some Screenshots of my Application
 
-![Image of Screenshot1](https://octodex.github.com/images/yaktocat.png)
+![Image of Screenshot1](https://github.com/davidjnunezf/ShopifySubmissionRepo/edit/master/Screenshot1.png)
 
-![Image of Screenshot2](https://octodex.github.com/images/yaktocat.png)
+![Image of Screenshot2](https://github.com/davidjnunezf/ShopifySubmissionRepo/edit/master/Screenshot2.png)
