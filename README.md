@@ -7,4 +7,8 @@ Clima is an app that takes real time weather data in real time from the website 
 This application will display the weather to the user initially based on their GPS location. However the user also 
 has the option to search up the weather in other cities.
 
-Here some Screenshots of my Application
+Here are some Screenshots of my Application
+
+![Image of Screenshot1](https://octodex.github.com/images/yaktocat.png)
+
+![Image of Screenshot2](https://octodex.github.com/images/yaktocat.png)
