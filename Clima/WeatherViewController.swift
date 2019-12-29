@@ -33,9 +33,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     }
     
     
-    
-    //MARK: - Networking
-    /***************************************************************/
+
     
     //Javascript Object Notation
     func getWeatherData(url: String, parameters:[String:String]){
