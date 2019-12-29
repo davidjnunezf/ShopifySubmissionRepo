@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  WeatherApp
-//
-//  Created by Angela Yu on 23/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
-//
 
 import UIKit
 import CoreLocation
@@ -13,15 +6,12 @@ import SwiftyJSON
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeCityDelegate{
     
-    //Constants
+
     //website we get our weather info from
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    //change app Id to my own Id
     let APP_ID = "92eea109742a96c83616550b59232dc6"
-    /***Get your own App ID at https://openweathermap.org/appid ****/
-    
 
-    //TODO: Declare instance variables here
+
     var locationManager:CLLocationManager = CLLocationManager()
     
     var weatherDataModel = WeatherDataModel()
@@ -35,8 +25,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //TODO:Set up the location manager here.
+
         locationManager.delegate = self//initiliaze the location deligate
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters //location accuracy
         locationManager.requestWhenInUseAuthorization() //give user permission requests remember to change plist file to accustom
@@ -48,7 +37,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     //MARK: - Networking
     /***************************************************************/
     
-    //Write the getWeatherData method here:
     //Javascript Object Notation
     func getWeatherData(url: String, parameters:[String:String]){
         
@@ -59,8 +47,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
                 
                 let weatherJSON:JSON = JSON(response.result.value!)
                 
-                self.updateWeatherData(weatherJSON)
-             //   cityLabel.text = response.result.
+                self.updateWeatherData(weatherJSON
             }
             else{
                 print("error problem is \(response.result.error)")
@@ -74,12 +61,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     
     
     
-    
-    //MARK: - JSON Parsing
-    /***************************************************************/
-   
-    
-    //Write the updateWeatherData method here:
+ 
     
     func updateWeatherData(_ json:JSON){
         
@@ -109,12 +91,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
 
     
     
-    
-    //MARK: - UI Updates
-    /***************************************************************/
-    
-    
-    //Write the updateUIWithWeatherData method here:
+
     func updateUIWithWeatherData(){
         cityLabel.text = weatherDataModel.city
         weatherIcon.image = UIImage(named: "\(weatherDataModel.weatherIconName)")
@@ -126,11 +103,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     
     
     
-    //MARK: - Location Manager Delegate Methods
-    /***************************************************************/
-    
-    
-    //Write the didUpdateLocations method here:
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        //Last location in locations array is most accurate
         let location = locations[locations.count-1]
@@ -150,7 +123,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     }
     
     
-    //Write the didFailWithError method here:
+
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
@@ -159,18 +132,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeC
     
 
     
-    //MARK: - Change City Delegate methods
-    /***************************************************************/
-    
-    
-    //Write the userEnteredANewCityName Delegate method here:
+
     func userEnteredANewCityName(city:String){
         let params: [String:String] = ["q" : city,"appid" : APP_ID]
         getWeatherData(url: WEATHER_URL, parameters: params)
     }
 
-    
-    //Write the PrepareForSegue Method here
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "changeCityName" {
