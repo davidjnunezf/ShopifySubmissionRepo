@@ -7,7 +7,7 @@ import SwiftyJSON
 class WeatherViewController: UIViewController, CLLocationManagerDelegate,ChangeCityDelegate{
     
 
-    //website we get our weather info from
+    //website we obtain weather info from
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "92eea109742a96c83616550b59232dc6"
 
